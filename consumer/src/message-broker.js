@@ -4,13 +4,13 @@ const winston = require('winston');
 const messageDelay = require('./message-delay');
 
 module.exports.start = async () => {
-  const connection = await amqp.connect('');
+  const connection = await amqp.connect(process.env.MESSAGE_QUEUE);
 
   const channel = await connection.createChannel();
   await channel.assertQueue('tasks', { durable: true });
   await channel.prefetch();
 
-  winston.info('Waiting tasks');
+  winston.info('Aguardando envios');
 
   channel.consume('tasks', async message => {
     await messageDelay(1000);
@@ -20,6 +20,6 @@ module.exports.start = async () => {
 
     channel.ack(message);
 
-    winston.info(`${task.message} received!`);
+    winston.info(`${task.message} recebido!`);
   });
 };
