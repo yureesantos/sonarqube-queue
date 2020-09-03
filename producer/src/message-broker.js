@@ -7,18 +7,19 @@ module.exports.start = async () => {
   const channel = await connection.createChannel();
   await channel.assertQueue('tasks', { durable: true });
 
-  Array(10)
-    .fill()
-    .map(async (x, y) => {
-      const task = { message: `Envio ${y}` };
+  const project = {
+    id: 'dasd4a8s9e7198-das123',
+    name: 'Projeto Movile',
+    source: 'scanner-test',
+  };
 
-      await channel.sendToQueue('tasks', Buffer.from(JSON.stringify(task)), {
-        contentType: 'application/json',
-        persistent: true,
-      });
+  await channel.sendToQueue('tasks', Buffer.from(JSON.stringify(project)), {
+    contentType: 'application/json',
+    persistent: true,
+  });
 
-      winston.info(`KApi ${y} Envios!`);
-    });
+  winston.info(`MSG ENVIADA`);
+
   setTimeout(() => {
     connection.close();
   }, 3000);

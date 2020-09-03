@@ -6,6 +6,6 @@ WORKDIR /usr/src/app
 
 VOLUME [ "/usr/src/app" ]
 
-RUN npm install -g nodemon
+RUN npm install
 
-CMD [ "nodemon", "-L", "src/index.js" ]
+CMD [ "node", "src/index.js" ]
