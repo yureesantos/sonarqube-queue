@@ -9,7 +9,7 @@ module.exports.start = async () => {
 
   const project = {
     id: 'dasd4a8s9e7198-das123',
-    name: 'Projeto Movile',
+    name: 'Projeto LinkApi',
     source: 'scanner-test',
   };
 

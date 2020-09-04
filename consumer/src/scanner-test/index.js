@@ -1,3 +1,3 @@
-module.exports = {
-  teste: true,
-};
+const fs = require('fs');
+
+class Teste {}
