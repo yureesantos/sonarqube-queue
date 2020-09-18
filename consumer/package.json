@@ -10,15 +10,16 @@
   "author": "Yure Araújo",
   "license": "ISC",
   "dependencies": {
-    "eslint": "^7.7.0",
-    "sonarqube-scanner": "^2.7.0",
     "amqplib": "^0.6.0",
+    "axios": "^0.20.0",
+    "eslint": "^7.7.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-sonarjs": "^0.5.0",
     "prettier": "^2.0.5",
+    "sonarqube-scanner": "^2.7.0",
     "winston": "^3.3.3"
   },
   "devDependencies": {
